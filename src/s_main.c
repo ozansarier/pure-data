@@ -280,8 +280,12 @@ int sys_main(int argc, char **argv)
     _set_fmode( _O_BINARY );
 # else  /* MinGW */
     {
+        #ifdef _fmode
+        _fmode = _O_BINARY;
+        #else
         extern int _fmode;
         _fmode = _O_BINARY;
+        #endif
     }
 # endif /* _MSC_VER */
 #endif  /* WIN32 */

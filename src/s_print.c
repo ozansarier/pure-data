@@ -43,7 +43,7 @@ static char* strnpointerid(char *dest, const void *pointer, size_t len)
 {
     *dest=0;
     if (pointer)
-        snprintf(dest, len, ".x%lx", (unsigned long)pointer);
+        snprintf(dest, len, ".x%lx", (unsigned long long)pointer);
     return dest;
 }
 
@@ -270,7 +270,7 @@ void glob_finderror(t_pd *dummy)
 void glob_findinstance(t_pd *dummy, t_symbol*s)
 {
     // revert s to (potential) pointer to object
-    long obj = 0;
+    long long obj = 0;
     if (sscanf(s->s_name, ".x%lx", &obj))
     {
         if (obj)

@@ -83,7 +83,7 @@ typedef unsigned __int64  uint64_t;
 
 /* signed and unsigned integer types the size of a pointer:  */
 #if !defined(PD_LONGINTTYPE)
-#define PD_LONGINTTYPE long
+#define PD_LONGINTTYPE long long int
 #endif
 
 #if !defined(PD_FLOATSIZE)

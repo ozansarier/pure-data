@@ -29,11 +29,13 @@ that didn't really belong anywhere. */
 #include <io.h>
 #include <fcntl.h>
 #include <process.h>
+#define EADDRINUSE WSAEADDRINUSE
 #include <winsock.h>
 #include <windows.h>
 typedef int socklen_t;
-#define EADDRINUSE WSAEADDRINUSE
+
 #endif
+
 
 #include <stdarg.h>
 #include <signal.h>

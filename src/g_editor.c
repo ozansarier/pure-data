@@ -970,13 +970,13 @@ void canvas_vis(t_canvas *x, t_floatarg f)
                 (int)(x->gl_screenx1), (int)(x->gl_screeny1),
                 x->gl_edit);
             snprintf(cbuf, MAXPDSTRING - 2, "pdtk_canvas_setparents .x%lx",
-                (unsigned long)c);
+                (unsigned long long)c);
             while (c->gl_owner) {
                 c = c->gl_owner;
                 cbuflen = strlen(cbuf);
                 snprintf(cbuf + cbuflen,
                          MAXPDSTRING - cbuflen - 2,/* leave 2 for "\n\0" */
-                         " .x%lx", (unsigned long)c);
+                         " .x%lx", (unsigned long long)c);
             }
             strcat(cbuf, "\n");
             sys_gui(cbuf);

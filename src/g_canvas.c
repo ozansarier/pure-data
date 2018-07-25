@@ -1378,6 +1378,9 @@ static void canvas_completepath(char *from, char *to, int bufsize)
 
 /* maybe we should rename check_exists() to sys_access() and move it to s_path */
 #ifdef _WIN32
+#include <s_utf8.h>
+#include  <io.h>  
+#include  <errno.h>  
 static int check_exists(const char*path)
 {
     char pathbuf[MAXPDSTRING];
